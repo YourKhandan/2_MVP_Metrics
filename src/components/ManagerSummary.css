@@ -1,0 +1,186 @@
+/* src/components/ManagerSummary.css */
+.manager-container {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.manager-header {
+    margin-bottom: 30px;
+}
+
+.manager-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.manager-header p {
+    color: #a0a0c0;
+    font-size: 14px;
+}
+
+.manager-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 20, 30, 0.7);
+    padding: 8px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.filter-box label {
+    font-size: 14px;
+    color: #a0a0c0;
+}
+
+.month-select {
+    background: black;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.stats-info {
+    font-size: 13px;
+    color: #a855f7;
+    background: rgba(168,85,247,0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.table-wrapper {
+    background: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.manager-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.manager-table thead {
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.manager-table th {
+    text-align: left;
+    padding: 15px 12px;
+    color: #a855f7;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.2s;
+}
+
+.manager-table th:hover {
+    background: rgba(168,85,247,0.1);
+    color: white;
+}
+
+.manager-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #e0e0e0;
+}
+
+.manager-table tr:hover {
+    background: rgba(168,85,247,0.05);
+}
+
+.signal-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.signal-badge.healthy {
+    background: rgba(16,185,129,0.2);
+    color: #10b981;
+    border: 1px solid rgba(16,185,129,0.3);
+}
+
+.signal-badge.warning {
+    background: rgba(245,158,11,0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245,158,11,0.3);
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #a0a0c0;
+}
+
+@media (max-width: 768px) {
+    .manager-container {
+        padding: 20px;
+    }
+    
+    .manager-table th,
+    .manager-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Add to ManagerSummary.css */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    gap: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(168,85,247,0.3);
+    border-top-color: #a855f7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-banner {
+    background: rgba(239,68,68,0.2);
+    border: 1px solid #ef4444;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    color: #ef4444;
+    font-size: 14px;
+}
